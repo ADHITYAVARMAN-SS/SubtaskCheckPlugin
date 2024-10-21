@@ -18,7 +18,7 @@ public class AllSubtasksDoneCondition extends AbstractJiraCondition {
 
         // Check if issue has subtasks
         if (parentIssue.getSubTaskObjects().isEmpty()) {
-            return true; // No subtasks, allow transition
+            return true;
         }
 
         // Check if all subtasks are in "Done" status

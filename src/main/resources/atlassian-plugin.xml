@@ -23,7 +23,7 @@
 
     <workflow-condition key="all-subtasks-done-condition"
     name="All Subtasks Done Condition"
-    i18n-name-key="all-subtasks-done-condition.name"
+    i18n-name-key="all-subtasks-done-condition"
     class="com.archimedis.jira.workflow.AllSubtasksDoneConditionFactory">
     
     <description key="all-subtasks-done-condition.description">
