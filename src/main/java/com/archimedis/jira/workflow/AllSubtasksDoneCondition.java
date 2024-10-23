@@ -20,7 +20,6 @@ public class AllSubtasksDoneCondition extends AbstractJiraCondition {
         if (parentIssue.getSubTaskObjects().isEmpty()) {
             return false;
         }
-
         // Check if all subtasks are in "Done" status
         for (Issue subtask : parentIssue.getSubTaskObjects()) {
             if (!"Done".equals(subtask.getStatus().getName())) {
