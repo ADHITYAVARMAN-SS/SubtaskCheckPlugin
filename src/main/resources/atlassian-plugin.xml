@@ -38,5 +38,24 @@
     <resource type="velocity" name="input-parameters" location="templates/conditions/all-subtasks-done-condition-input.vm"/>
     <resource type="velocity" name="edit-parameters" location="templates/conditions/all-subtasks-done-condition-input.vm"/>
 </workflow-condition>
+
+
+<workflow-validator key="all-subtasks-done-validator"
+    name="All Subtasks Done Validator"
+    i18n-name-key="all-subtasks-done-validator"
+    class="com.archimedis.jira.workflow.AllSubtasksDoneValidatorFactory">
     
+    <description key="Validator that ensures all subtasks are done before transitioning to 'To Approve'.">
+        Validator that ensures all subtasks are done before transitioning to 'To Approve'.
+    </description>
+
+    <validator-class>
+        com.archimedis.jira.workflow.AllSubtasksDoneValidator
+    </validator-class>
+    
+    <resource type="velocity" name="view" location="templates/validators/all-subtasks-done-validator.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/validators/all-subtasks-done-validator-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/validators/all-subtasks-done-validator-edit.vm"/>
+</workflow-validator>
+
 </atlassian-plugin>

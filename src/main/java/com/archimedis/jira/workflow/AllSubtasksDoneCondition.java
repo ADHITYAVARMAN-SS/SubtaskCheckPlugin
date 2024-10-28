@@ -7,6 +7,10 @@ import com.opensymphony.module.propertyset.PropertySet;
 import com.opensymphony.workflow.WorkflowException;
 import java.util.Map;
 
+import com.atlassian.jira.component.ComponentAccessor;
+import com.opensymphony.module.propertyset.PropertySet;
+import com.opensymphony.workflow.Condition;
+
 public class AllSubtasksDoneCondition extends AbstractJiraCondition {
 
     
@@ -15,16 +19,18 @@ public class AllSubtasksDoneCondition extends AbstractJiraCondition {
     @Override
     public boolean passesCondition(Map transientVars, Map args, PropertySet ps) throws WorkflowException {
         Issue parentIssue = getIssue(transientVars);
+        Map<String, Object> errors = (Map<String, Object>) transientVars.get("errors");
 
         // Check if issue has subtasks
         if (parentIssue.getSubTaskObjects().isEmpty()) {
-            return false;
+            return false; 
         }
+
         // Check if all subtasks are in "Done" status
         for (Issue subtask : parentIssue.getSubTaskObjects()) {
             if (!"Done".equals(subtask.getStatus().getName())) {
                 log.info("Subtask not in Done status: " + subtask.getKey());
-                return true;
+            return true;
             }
         }
         return false;

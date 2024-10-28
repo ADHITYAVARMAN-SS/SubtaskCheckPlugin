@@ -1,0 +1,5 @@
+## This is the view template for the All Subtasks Done Validator
+## No parameters to display for this validator
+
+<h2>All Subtasks Done Validator</h2>
+<p>This validator ensures that all subtasks are marked as 'Done' before allowing the transition to 'To Approve'.</p>
